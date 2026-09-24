@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Guia do Hóspede • Vila Tupi</title>
+
+<meta name="theme-color" content="#E4D1BC">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -13,103 +21,131 @@
 :root{
 
 --bg:#F8F4EE;
---card:#F1E7DA;
---card2:#E8D7C3;
---text:#2A2A2A;
---muted:#786C60;
---accent:#D8B992;
---accent-dark:#C9A57B;
---radius:22px;
+--card:#F3E7D8;
+--card-light:#FAF6F1;
+--text:#2B2B2B;
+--muted:#7B7067;
+--accent:#D6BA96;
+--accent-dark:#C6A379;
+
+--radius:24px;
 
 }
 
 *{
+
 margin:0;
 padding:0;
 box-sizing:border-box;
-}
 
-html{
-scroll-behavior:smooth;
 }
 
 body{
 
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
 background:var(--bg);
+font-family:Inter,sans-serif;
 color:var(--text);
 
-}
-
-h1,h2{
-
-font-family:Georgia,"Times New Roman",serif;
-font-weight:600;
-letter-spacing:.5px;
+overflow-x:hidden;
 
 }
 
 .page{
 
 display:none;
+
 min-height:100vh;
-padding:22px;
-animation:fade .35s;
+
+padding:24px;
+
+animation:slide .35s ease;
 
 }
 
 .page.active{
+
 display:block;
+
 }
 
-@keyframes fade{
+@keyframes slide{
 
 from{
+
 opacity:0;
-transform:translateX(18px);
+transform:translateX(25px);
+
 }
 
 to{
+
 opacity:1;
 transform:none;
+
 }
+
+}
+
+h1{
+
+font-family:"Cormorant Garamond",serif;
+font-size:46px;
+line-height:.95;
+font-weight:600;
+letter-spacing:.5px;
+
+}
+
+h2{
+
+font-family:"Cormorant Garamond",serif;
+font-size:42px;
+font-weight:600;
+
+margin-bottom:18px;
+
+}
+
+.subtitle{
+
+margin:10px 0 28px;
+
+color:var(--muted);
+font-size:13px;
+letter-spacing:1px;
+text-transform:uppercase;
 
 }
 
 .flags{
 
 position:absolute;
+top:26px;
 right:22px;
-top:22px;
-font-size:26px;
+font-size:24px;
 
 }
 
-.hero-img{
+.hero{
 
 width:100%;
 aspect-ratio:4/5;
-background:#ddd;
-border-radius:26px;
+
+border-radius:28px;
+
 overflow:hidden;
-margin:28px 0;
+
+background:#ddd;
+
+margin-bottom:28px;
 
 }
 
-.hero-img img{
+.hero img{
 
 width:100%;
 height:100%;
 object-fit:cover;
-
-}
-
-.subtitle{
-
-color:var(--muted);
-text-align:center;
-margin-top:8px;
-margin-bottom:20px;
 
 }
 
@@ -121,52 +157,55 @@ gap:14px;
 
 }
 
-.menu{
+.tile{
 
 background:var(--card);
+
 border:none;
+
 border-radius:18px;
-padding:16px 10px;
-cursor:pointer;
+
+padding:16px 8px;
 
 display:flex;
 flex-direction:column;
 align-items:center;
-justify-content:center;
 gap:10px;
+
+cursor:pointer;
 
 transition:.25s;
 
 }
 
-.menu:hover{
+.tile:hover{
 
-transform:translateY(-2px);
+transform:translateY(-3px);
 
 }
 
-.menu svg{
+.tile svg{
 
 width:30px;
 height:30px;
-color:#8E6C49;
+color:#8C6A49;
 
 }
 
-.menu span{
+.tile span{
 
-font-size:12px;
+font-size:11px;
 text-align:center;
-color:#5E5247;
+color:#5F544A;
 
 }
 
 .top{
 
 display:flex;
-align-items:center;
 justify-content:space-between;
-margin-bottom:24px;
+align-items:center;
+margin-bottom:20px;
 
 }
 
@@ -176,30 +215,34 @@ width:46px;
 height:46px;
 
 border:none;
+
 border-radius:50%;
 
 background:var(--card);
 
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 
 cursor:pointer;
 
 }
 
-.card{
+.back svg{
 
-background:var(--card);
-border-radius:22px;
-padding:18px;
-margin-bottom:18px;
+color:#8C6A49;
 
 }
 
-.card h3{
+.card{
 
-margin-bottom:12px;
+background:var(--card-light);
+
+border-radius:22px;
+
+padding:18px;
+
+margin-bottom:16px;
 
 }
 
@@ -210,18 +253,27 @@ justify-content:space-between;
 align-items:center;
 
 background:white;
-border-radius:16px;
 
 padding:14px;
+
+border-radius:14px;
+
+margin-top:10px;
 
 }
 
 .copy button{
 
 background:var(--accent);
+
 border:none;
+
 padding:10px 16px;
+
 border-radius:12px;
+
+font-weight:600;
+
 cursor:pointer;
 
 }
@@ -232,70 +284,34 @@ display:block;
 width:100%;
 
 background:var(--accent);
-color:#2A2A2A;
-text-align:center;
 
 padding:15px;
+
 border-radius:999px;
+
+text-align:center;
+
 text-decoration:none;
+
 font-weight:600;
+
+color:#2B2B2B;
 
 margin-top:18px;
-
-}
-
-.place{
-
-display:flex;
-gap:15px;
-align-items:flex-start;
-
-background:white;
-padding:14px;
-border-radius:18px;
-margin-bottom:12px;
-
-}
-
-.place svg{
-
-width:26px;
-height:26px;
-color:#8E6C49;
-margin-top:4px;
-
-}
-
-.place h4{
-
-margin-bottom:4px;
-
-}
-
-.place p{
-
-font-size:13px;
-color:var(--muted);
-
-}
-
-.place a{
-
-display:inline-block;
-margin-top:8px;
-color:#8E6C49;
-text-decoration:none;
-font-weight:600;
 
 }
 
 .rule{
 
 display:flex;
-gap:15px;
-background:white;
+gap:14px;
+
+background:var(--card-light);
+
 padding:14px;
+
 border-radius:18px;
+
 margin-bottom:12px;
 
 }
@@ -304,12 +320,14 @@ margin-bottom:12px;
 
 width:52px;
 height:52px;
+
 background:#173629;
+
 border-radius:50%;
 
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 
 flex-shrink:0;
 
@@ -321,11 +339,65 @@ color:white;
 
 }
 
+.place{
+
+display:flex;
+gap:14px;
+
+background:var(--card-light);
+
+padding:14px;
+
+border-radius:18px;
+
+margin-bottom:12px;
+
+}
+
+.place-icon{
+
+width:46px;
+height:46px;
+
+background:var(--card);
+
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+flex-shrink:0;
+
+}
+
+.place-icon svg{
+
+color:#8C6A49;
+
+}
+
+.place a{
+
+display:inline-block;
+margin-top:8px;
+
+color:#8C6A49;
+
+text-decoration:none;
+
+font-weight:600;
+
+}
+
 .faq{
 
-background:white;
+background:var(--card-light);
+
 border-radius:18px;
-margin-bottom:10px;
+
+margin-bottom:12px;
+
 overflow:hidden;
 
 }
@@ -333,45 +405,88 @@ overflow:hidden;
 .faq button{
 
 width:100%;
+
+background:none;
 border:none;
-background:white;
-padding:16px;
-text-align:left;
-font-size:15px;
-cursor:pointer;
+
+padding:18px;
 
 display:flex;
 justify-content:space-between;
 align-items:center;
 
+cursor:pointer;
+
+font-size:15px;
+
 }
 
-.faq div{
+.answer{
 
 display:none;
-padding:0 16px 16px;
+
+padding:0 18px 18px;
+
 color:var(--muted);
 
 }
 
-.show{
-display:block!important;
+.answer.show{
+
+display:block;
+
+}
+
+.floating{
+
+position:fixed;
+
+bottom:22px;
+right:22px;
+
+width:58px;
+height:58px;
+
+border-radius:50%;
+
+background:var(--accent);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+box-shadow:0 8px 20px rgba(0,0,0,.18);
+
+cursor:pointer;
+
+z-index:999;
+
+}
+
+.floating svg{
+
+color:#2B2B2B;
+
 }
 
 .toast{
 
 position:fixed;
-bottom:25px;
+
+bottom:95px;
 left:50%;
+
 transform:translateX(-50%);
 
-background:#2A2A2A;
+background:#2B2B2B;
 color:white;
 
 padding:12px 22px;
+
 border-radius:999px;
 
 opacity:0;
+
 transition:.3s;
 
 }
@@ -385,20 +500,27 @@ opacity:1;
 @media(max-width:390px){
 
 .grid{
+
 gap:10px;
+
 }
 
-.menu{
+.tile{
+
 padding:12px 6px;
+
 }
 
-.menu span{
-font-size:11px;
+.tile span{
+
+font-size:10px;
+
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
@@ -411,90 +533,108 @@ font-size:11px;
 
 <div class="flags">🇬🇧 🇪🇸</div>
 
-<h1 style="text-align:center;font-size:42px;margin-top:12px;">
-SEJA BEM-VINDO!
-</h1>
+<h1>SEJA BEM-VINDO!</h1>
 
 <p class="subtitle">
 Toque nos ícones para saber mais.
 </p>
 
-<div class="hero-img">
+<div class="hero">
+
 <img src="assets/capa-apartamento.jpg" alt="Apartamento">
+
 </div>
 
 <div class="grid">
 
-<button class="menu" onclick="openPage('checkin')">
-<i data-lucide="key-round"></i><span>Check-in/out</span>
+<button class="tile" onclick="openPage('checkin')">
+<i data-lucide="key-round"></i>
+<span>Check-in/out</span>
 </button>
 
-<button class="menu" onclick="openPage('chegar')">
-<i data-lucide="map-pin"></i><span>Como chegar</span>
+<button class="tile" onclick="openPage('chegar')">
+<i data-lucide="map-pin"></i>
+<span>Como chegar</span>
 </button>
 
-<button class="menu" onclick="openPage('wifi')">
-<i data-lucide="wifi"></i><span>Wi-Fi</span>
+<button class="tile" onclick="openPage('wifi')">
+<i data-lucide="wifi"></i>
+<span>Wi-Fi</span>
 </button>
 
-<button class="menu" onclick="openPage('apartamento')">
-<i data-lucide="home"></i><span>Apartamento</span>
+<button class="tile" onclick="openPage('apartamento')">
+<i data-lucide="home"></i>
+<span>Apartamento</span>
 </button>
 
-<button class="menu" onclick="openPage('regras')">
-<i data-lucide="clipboard-list"></i><span>Regras</span>
+<button class="tile" onclick="openPage('regras')">
+<i data-lucide="clipboard-list"></i>
+<span>Regras</span>
 </button>
 
-<button class="menu" onclick="openPage('importante')">
-<i data-lucide="info"></i><span>Importante</span>
+<button class="tile" onclick="openPage('importante')">
+<i data-lucide="info"></i>
+<span>Importante</span>
 </button>
 
-<button class="menu" onclick="openPage('amenidades')">
-<i data-lucide="umbrella"></i><span>Amenidades</span>
+<button class="tile" onclick="openPage('amenidades')">
+<i data-lucide="umbrella"></i>
+<span>Amenidades</span>
 </button>
 
-<button class="menu" onclick="openPage('transporte')">
-<i data-lucide="bus"></i><span>Locomoção</span>
+<button class="tile" onclick="openPage('transporte')">
+<i data-lucide="bus"></i>
+<span>Locomoção</span>
 </button>
 
-<button class="menu" onclick="openPage('faq')">
-<i data-lucide="circle-help"></i><span>Perguntas</span>
+<button class="tile" onclick="openPage('faq')">
+<i data-lucide="circle-help"></i>
+<span>Perguntas</span>
 </button>
 
-<button class="menu" onclick="openPage('cafes')">
-<i data-lucide="coffee"></i><span>Cafés</span>
+<button class="tile" onclick="openPage('cafes')">
+<i data-lucide="coffee"></i>
+<span>Cafés</span>
 </button>
 
-<button class="menu" onclick="openPage('restaurantes')">
-<i data-lucide="utensils"></i><span>Restaurantes</span>
+<button class="tile" onclick="openPage('restaurantes')">
+<i data-lucide="utensils"></i>
+<span>Restaurantes</span>
 </button>
 
-<button class="menu" onclick="openPage('bares')">
-<i data-lucide="wine"></i><span>Bares</span>
+<button class="tile" onclick="openPage('bares')">
+<i data-lucide="wine"></i>
+<span>Bares</span>
 </button>
 
-<button class="menu" onclick="openPage('mercado')">
-<i data-lucide="shopping-cart"></i><span>Mercado</span>
+<button class="tile" onclick="openPage('mercado')">
+<i data-lucide="shopping-cart"></i>
+<span>Mercado</span>
 </button>
 
-<button class="menu" onclick="openPage('padarias')">
-<i data-lucide="croissant"></i><span>Padarias</span>
+<button class="tile" onclick="openPage('padarias')">
+<i data-lucide="croissant"></i>
+<span>Padarias</span>
 </button>
 
-<button class="menu" onclick="openPage('lavanderias')">
-<i data-lucide="washing-machine"></i><span>Lavanderias</span>
+<button class="tile" onclick="openPage('lavanderias')">
+<i data-lucide="washing-machine"></i>
+<span>Lavanderias</span>
 </button>
 
-<button class="menu" onclick="openPage('emergencia')">
-<i data-lucide="ambulance"></i><span>Emergência</span>
+<button class="tile" onclick="openPage('emergencia')">
+<i data-lucide="ambulance"></i>
+<span>Emergência</span>
 </button>
 
-<button class="menu" onclick="openPage('partida')">
-<i data-lucide="luggage"></i><span>Antes de partir</span>
+<button class="tile" onclick="openPage('partida')">
+<i data-lucide="luggage"></i>
+<span>Antes de partir</span>
 </button>
 
-<button class="menu" onclick="openPage('avaliacao')">
-<i data-lucide="star"></i><span>Avaliação</span>
+<button class="tile" onclick="openPage('avaliacao')">
+<i data-lucide="star"></i>
+<span>Avaliação</span>
 </button>
 
 </div>
@@ -515,20 +655,26 @@ Toque nos ícones para saber mais.
 
 </div>
 
-<h1>COMO CHEGAR</h1>
+<h2>COMO CHEGAR</h2>
 
-<div class="hero-img">
-<img src="assets/fachada.jpg" alt="">
+<div class="hero">
+
+<img src="assets/fachada.jpg">
+
 </div>
 
 <div class="card">
 
-<p><strong>Endereço:</strong></p>
-
-<p>Adicione aqui o endereço completo.</p>
+<p>
+📍 Rua Uirapuru, nº 30
+<br>
+Vila Tupi • Praia Grande – SP
+<br>
+<strong>Apartamento 52</strong>
+</p>
 
 <a class="big-btn"
-href="https://maps.google.com"
+href="https://www.google.com/maps/search/?api=1&query=Rua+Uirapuru+30+Vila+Tupi+Praia+Grande+SP"
 target="_blank">
 Abrir no Google Maps
 </a>
@@ -551,7 +697,7 @@ Abrir no Google Maps
 
 </div>
 
-<h1>WI-FI</h1>
+<h2>WI-FI</h2>
 
 <div class="card">
 
@@ -601,7 +747,7 @@ Copiar
 
 </div>
 
-<h1>REGRAS DA CASA</h1>
+<h2>REGRAS DA CASA</h2>
 
 <div class="rule">
 
@@ -685,56 +831,6 @@ Copiar
 
 </section>
 
-<!-- RESTAURANTES -->
-
-<section class="page" id="restaurantes">
-
-<div class="top">
-
-<button class="back" onclick="goHome()">
-<i data-lucide="arrow-left"></i>
-</button>
-
-<div class="flags">🇬🇧 🇪🇸</div>
-
-</div>
-
-<h1>RESTAURANTES</h1>
-
-<div class="place">
-
-<i data-lucide="utensils"></i>
-
-<div>
-
-<h4>Adicione um restaurante</h4>
-
-<p>Tipo de cozinha • 5 min.</p>
-
-<a href="#">Google Maps</a>
-
-</div>
-
-</div>
-
-<div class="place">
-
-<i data-lucide="utensils"></i>
-
-<div>
-
-<h4>Adicione outro restaurante</h4>
-
-<p>6 min.</p>
-
-<a href="#">Google Maps</a>
-
-</div>
-
-</div>
-
-</section>
-
 <!-- FAQ -->
 
 <section class="page" id="faq">
@@ -749,17 +845,30 @@ Copiar
 
 </div>
 
-<h1>PERGUNTAS FREQUENTES</h1>
+<h2>PERGUNTAS FREQUENTES</h2>
 
 <div class="faq">
 
 <button onclick="toggleFaq(this)">
-Tem estacionamento?
+Tem estacionamento disponível?
 <i data-lucide="chevron-down"></i>
 </button>
 
-<div>
-Sim, há uma vaga disponível para sua reserva.
+<div class="answer">
+Sim, há uma vaga de garagem disponível para sua reserva.
+</div>
+
+</div>
+
+<div class="faq">
+
+<button onclick="toggleFaq(this)">
+Tem roupa de cama e banho?
+<i data-lucide="chevron-down"></i>
+</button>
+
+<div class="answer">
+Sim, fornecemos roupas de cama e banho para todos os hóspedes.
 </div>
 
 </div>
@@ -771,17 +880,17 @@ Como funciona a lavanderia?
 <i data-lucide="chevron-down"></i>
 </button>
 
-<div>
-Há lavanderias próximas à hospedagem.
+<div class="answer">
+Existem lavanderias próximas ao apartamento e um mapa será disponibilizado nesta seção.
 </div>
 
 </div>
 
 </section>
 
-<!-- IMPORTANTE -->
+<!-- RESTAURANTES -->
 
-<section class="page" id="importante">
+<section class="page" id="restaurantes">
 
 <div class="top">
 
@@ -793,51 +902,43 @@ Há lavanderias próximas à hospedagem.
 
 </div>
 
-<h1>IMPORTANTE</h1>
+<h2>RESTAURANTES LOCAIS</h2>
 
-<div class="place">
+<div class="card">
 
-<i data-lucide="tv"></i>
+<img src="assets/restaurante1.jpg" style="width:100%;border-radius:18px;margin-bottom:14px;">
 
-<div>
+<h3>Nome do restaurante</h3>
 
-<h4>TV Smart</h4>
+<p>Tipo de cozinha • 5 min.</p>
 
-<p>Use normalmente os aplicativos disponíveis.</p>
-
-</div>
-
-</div>
-
-<div class="place">
-
-<i data-lucide="coffee"></i>
-
-<div>
-
-<h4>Máquina de café</h4>
-
-<p>Utilize conforme as instruções.</p>
+<a class="big-btn" href="#">
+Google Maps
+</a>
 
 </div>
 
-</div>
+<div class="card">
 
-<div class="place">
+<img src="assets/restaurante2.jpg" style="width:100%;border-radius:18px;margin-bottom:14px;">
 
-<i data-lucide="spray-can"></i>
+<h3>Outro restaurante</h3>
 
-<div>
+<p>6 min.</p>
 
-<h4>Produtos de limpeza</h4>
-
-<p>Disponíveis no apartamento.</p>
-
-</div>
+<a class="big-btn" href="#">
+Google Maps
+</a>
 
 </div>
 
 </section>
+
+<div class="floating" onclick="goHome()">
+
+<i data-lucide="menu"></i>
+
+</div>
 
 <script>
 
@@ -875,9 +976,7 @@ setTimeout(()=>t.classList.remove("show"),1800);
 
 function toggleFaq(btn){
 
-const d=btn.nextElementSibling;
-
-d.classList.toggle("show");
+btn.nextElementSibling.classList.toggle("show");
 
 }
 
