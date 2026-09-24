@@ -607,7 +607,7 @@
             transform: scale(0.9);
         }
 
-        /* Notificação Toast (Copiado) */
+        /* Notificação Toast */
         .toast {
             position: absolute;
             top: 40px;
@@ -671,12 +671,13 @@
     <!-- HOME PAGE -->
     <div id="page-home" class="page active">
         <section class="hero">
-            <!-- Imagem de Capa Placeholder (usando um cinza elegante caso não carregue) -->
-            <img src="assets/IMG_6183.jpeg" alt="Apartamento" class="hero-img" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22400%22%20height%3D%22800%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23D6BA96%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20font-family%3D%22sans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3EFoto%20do%20Apartamento%3C%2Ftext%3E%3C%2Fsvg%3E'">
+            <!-- Imagem de Capa Placeholder -->
+            <img src="assets/capa-apartamento.jpg" alt="Apartamento" class="hero-img" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22400%22%20height%3D%22800%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23D6BA96%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20font-family%3D%22sans-serif%22%20font-size%3D%2220%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3EFoto%20do%20Apartamento%3C%2Ftext%3E%3C%2Fsvg%3E'">
             <div class="hero-overlay" onclick="document.querySelector('.menu-container').scrollIntoView({behavior: 'smooth'})">
                 <div class="hero-top">
                     <button class="flag-btn">🇧🇷</button>
-            
+                    <button class="flag-btn">🇬🇧</button>
+                    <button class="flag-btn">🇪🇸</button>
                 </div>
                 <div class="hero-bottom">
                     <h1 class="hero-title">RECANTO SOM<br>DAS ONDAS</h1>
@@ -719,11 +720,6 @@
                 <div class="menu-item nav-btn" data-target="page-important">
                     <i data-lucide="info" class="menu-icon"></i>
                     <span class="menu-label">Importante</span>
-                </div>
-                <!-- Amenidades (Direciona para Apartamento onde detalhamos tudo) -->
-                <div class="menu-item nav-btn" data-target="page-apartment">
-                    <i data-lucide="umbrella" class="menu-icon"></i>
-                    <span class="menu-label">Amenidades</span>
                 </div>
                 <!-- Locomoção -->
                 <div class="menu-item ext-link" data-query="Ponto de onibus Vila Tupi Praia Grande SP">
@@ -901,12 +897,28 @@
                     <span>Até 5 hóspedes</span>
                 </div>
                 <div class="apt-item">
+                    <i data-lucide="door-open"></i>
+                    <span>2 Quartos (1 Suíte)</span>
+                </div>
+                <div class="apt-item">
                     <i data-lucide="bed-double"></i>
-                    <span>1 Quarto</span>
+                    <span>1 Cama Queen</span>
+                </div>
+                <div class="apt-item">
+                    <i data-lucide="bed-double"></i>
+                    <span>1 Cama Casal</span>
+                </div>
+                <div class="apt-item">
+                    <i data-lucide="bed"></i>
+                    <span>2 Colchões Solteiro</span>
                 </div>
                 <div class="apt-item">
                     <i data-lucide="bath"></i>
-                    <span>1 Banheiro</span>
+                    <span>2 Banheiros</span>
+                </div>
+                <div class="apt-item">
+                    <i data-lucide="layers"></i>
+                    <span>Cama e Banho</span>
                 </div>
                 <div class="apt-item">
                     <i data-lucide="car"></i>
@@ -921,12 +933,16 @@
                     <span>Smart TV</span>
                 </div>
                 <div class="apt-item">
-                    <i data-lucide="umbrella"></i>
-                    <span>Guarda-sol</span>
+                    <i data-lucide="snowflake"></i>
+                    <span>Cooler</span>
                 </div>
                 <div class="apt-item">
-                    <i data-lucide="armchair"></i>
-                    <span>Cadeiras Praia</span>
+                    <i data-lucide="waves"></i>
+                    <span>Prancha Body-board</span>
+                </div>
+                <div class="apt-item">
+                    <i data-lucide="dribbble"></i>
+                    <span>Bola de Vôlei</span>
                 </div>
                 <div class="apt-item">
                     <i data-lucide="dog"></i>
@@ -952,11 +968,10 @@
         </header>
         <div class="page-content">
             <div class="important-card">
-                <!-- Imagem circular fallback se imagem não carregar -->
                 <img src="assets/importante-tv.jpg" alt="TV" class="important-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                 <div style="display:none; width:70px; height:70px; border-radius:50%; background:var(--accent); align-items:center; justify-content:center; color:#fff;"><i data-lucide="tv"></i></div>
                 <div class="important-text">
-                    Smart TV Samsung com acesso gratuito a canais via Pluto TV.
+                    Canais disponíveis na Samsung TV e Pluto TV para seu entretenimento.
                 </div>
             </div>
 
@@ -1038,11 +1053,11 @@
 
             <div class="accordion-item">
                 <button class="accordion-header">
-                    Tem roupa de cama?
+                    Tem roupa de cama e banho?
                     <i data-lucide="chevron-down"></i>
                 </button>
                 <div class="accordion-content">
-                    <div class="accordion-body">Não fornecemos roupas de cama e banho. Por favor, traga seus lençóis, fronhas e toalhas.</div>
+                    <div class="accordion-body">Sim. Disponibilizamos um jogo de toalhas de banho e de rosto e um jogo de roupas de cama completos para a sua estadia.</div>
                 </div>
             </div>
 
